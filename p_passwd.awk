@@ -14,8 +14,16 @@ function get_recert_event(){
     return recert_step
 }
 
+function get_hostname(){
+    command = "hostname"
+    command | getline result
+    close(command)
+    return result
+}
+
 BEGIN {
     recertification_= get_recert_event()
+    hostname = get_hostname()
 }
 ## esto es para el archivo /etc/shadow
 ## almacenamos en un array asociativo tanto la fecha del ultimo cambio como el esquema de password
@@ -34,5 +42,5 @@ NR==FNR {
     ssh_login_key = ssh_login(home)
     shadow = shadow_pass_scheme[username] ? substr(shadow_pass_scheme[username],0,4): "N/A"
     last_changed = shadow_lastchanged[username] ? shadow_lastchanged[username]*24*60*60*1000: "N/A"
-    print recertification_ "," username "," uid "," gid "," shell "," last_changed"," home "," shadow "," ssh_login_key
+    print recertification_ "," username "," uid "," gid "," shell "," last_changed"," home "," shadow "," ssh_login_key "," hostname
 }
