@@ -1,5 +1,5 @@
 function ssh_login(directory) {
-    filename = directory".ssh/id_rsa.pub"
+    filename = directory"/.ssh/id_rsa.pub"
     command = "test -e " filename " && echo exists || echo not_exists"
     command | getline result
     close(command)
