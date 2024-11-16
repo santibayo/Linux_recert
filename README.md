@@ -26,5 +26,5 @@ root [f2] - username
 /bin/bash [f5] - shell. nologin means no interactive shell, so no remote/local access granted
 1697846400000 [f6] - last change password
 /root [f7] - home directory
-!|$y$j [f8] - != locked| $xxx = encryption or hashing method 
+!|$y$j [f8] - != locked| $xxx = encryption or hashing method. For more information, please check => https://www.baeldung.com/linux/etc-shadow-star-exclamation-mark and https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/
 1|0 [f9] - ssh public key exist 
