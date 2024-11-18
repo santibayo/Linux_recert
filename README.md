@@ -1,5 +1,5 @@
 usage: 
-
+#Accounts 
 awk -F: -v recertification="KK" -f p_passwd.awk /etc/shadow /etc/passwd
 
 This will generate an extraction of the Linux users like this one:
@@ -35,3 +35,6 @@ file-format/
 1|0 [f9] - ssh public key exist 
 
 MBP-2,local [f10] - hostname
+
+# Authorization (group membership)
+awk -F: -f groups.awk passwd 
