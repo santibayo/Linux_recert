@@ -16,12 +16,22 @@ This will generate an extraction of the Linux users like this one:
 Meaning:
 
 KK [f1] - recertification exercise
+
 root [f2] - username
+
 0 [f3] - uid
+
 0 [f4] -gid
+
 /bin/bash [f5] - shell. nologin means no interactive shell, so no remote/local access granted
+
 1697846400000 [f6] - last change password
+
 /root [f7] - home directory
-!|$y$j [f8] - != locked| $xxx = encryption or hashing method. For more information, please check => https://www.baeldung.com/linux/etc-shadow-star-exclamation-mark and https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/
+
+!|$y$j [f8] - != locked| $xxx = encryption or hashing method. For more information, please check => https://www.baeldung.com/linux/etc-shadow-star-exclamation-mark and https://www.cyberciti.biz/faq/understanding-etcpasswd-
+file-format/
+
 1|0 [f9] - ssh public key exist 
+
 MBP-2,local [f10] - hostname
