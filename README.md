@@ -2,7 +2,9 @@
 Copy all awk scripts to the target machine.
 
 # Requirements
+- GNU AWK installed in the target machine.
 - Administration account capable of reading /etc/shadow, /etc/passwd and /etc/group or sudo capabilities.
+- Invoke the scripts with the administration account.
 
 # Accounts 
 Usage:
