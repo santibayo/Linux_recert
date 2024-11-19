@@ -70,6 +70,10 @@ Q4-2024,MBP-2.local,debian,www-data-group|os_test1|os_test2
 
 Meaning:
 Q4-2024 [f1] - recertification step
+
 MBP-2.local[f2] - system hostname
+
 debian [f3] - username
+
 www-data-group|os_test1|os_test2 [f4] - list of groups user belongs to or "_" if none.
+
