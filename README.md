@@ -1,4 +1,5 @@
-
+# Requirements
+- Administration account capable of reading /etc/shadow, /etc/passwd and /etc/group or sudo capabilities.
 # Accounts 
 Usage:
 
@@ -41,4 +42,4 @@ MBP-2,local [f10] - hostname
 # Authorization (group membership)
 Usage:
 
-`awk -F: -f groups.awk passwd `
+`awk -F: -f groups.awk /etc/passwd `
