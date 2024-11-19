@@ -1,5 +1,5 @@
 # Installation
-Copy all awk scripts to the target machine.
+Copy all awk scripts to the target machine in the same directory.
 
 # Requirements
 - GNU AWK installed in the target machine.
