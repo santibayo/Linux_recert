@@ -9,23 +9,23 @@ Copy all awk scripts to the target machine in the same directory.
 # Accounts 
 Usage:
 
-`awk -F: -v recertification="KK" -f p_passwd.awk /etc/shadow /etc/passwd`
+`awk -F: -v recertification="Q4-2024" -f p_passwd.awk /etc/shadow /etc/passwd`
 
 
 This will generate an extraction of the Linux users like this one:
 
-2024-06-16,colord,111,120,/usr/sbin/nologin,1697846400000,/var/lib/colord,!,0,MBP-2.local
+Q4-2024,colord,111,120,/usr/sbin/nologin,1697846400000,/var/lib/colord,!,0,MBP-2.local
 
-2024-06-16,gnome-initial-setup,112,65534,/bin/false,1697846400000,/run/gnome-initial-setup/,!,0,MBP-2.local
+Q4-2024,gnome-initial-setup,112,65534,/bin/false,1697846400000,/run/gnome-initial-setup/,!,0,MBP-2.local
 
-2024-06-16,Debian-gdm,113,121,/bin/false,1697846400000,/var/lib/gdm3,!,0,MBP-2.local
+Q4-2024,Debian-gdm,113,121,/bin/false,1697846400000,/var/lib/gdm3,!,0,MBP-2.local
 
-2024-06-16,debian,1000,1000,/usr/bin/zsh,1697846400000,/var/,$y$j,1,MBP-2.local
+Q4-2024,debian,1000,1000,/usr/bin/zsh,1697846400000,/var/,$y$j,1,MBP-2.local
 
 
 Meaning:
 
-KK [f1] - recertification exercise
+Q4-2024 [f1] - recertification exercise
 
 root [f2] - username
 
@@ -49,23 +49,27 @@ MBP-2,local [f10] - hostname
 # Authorization (group membership)
 Usage:
 
-`awk -F: -f groups.awk /etc/passwd `
+`awk -F: -v recertification="Q4-2024" -f groups.awk passwd `
 this will output the relation between users and groups in an output like this one:
 
-root:root-group,
+Q4-2024,MBP-2.local,root,root-group
 
-www-data:www-data-group,
+Q4-2024,MBP-2.local,www-data,www-data-group
 
-polkitd:
+Q4-2024,MBP-2.local,polkitd,_
 
-rtkit:
+Q4-2024,MBP-2.local,rtkit,_
 
-colord:
+Q4-2024,MBP-2.local,colord,_
 
-gnome-initial-setup:
+Q4-2024,MBP-2.local,gnome-initial-setup,_
 
-Debian-gdm:
+Q4-2024,MBP-2.local,Debian-gdm,_
 
-debian:www-data-group,os_test1,os_test2,
+Q4-2024,MBP-2.local,debian,www-data-group|os_test1|os_test2
 
-
+Meaning:
+Q4-2024 [f1] - recertification step
+MBP-2.local[f2] - system hostname
+debian [f3] - username
+www-data-group|os_test1|os_test2 [f4] - list of groups user belongs to or "_" if none.
