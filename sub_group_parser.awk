@@ -7,6 +7,9 @@ BEGIN{
 } 
 END{ str=""; 
     for(group in groups)
-        str=str  groups[group] ","
-    print user":" str
+        str=str  groups[group] "|"
+    if (str==""){
+        str = "_ "
+    }
+    print user"," substr(str,0,length(str)-1)
 }
