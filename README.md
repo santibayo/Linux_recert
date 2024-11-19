@@ -1,6 +1,6 @@
 
 # Accounts 
-usage:
+Usage:
 
 `awk -F: -v recertification="KK" -f p_passwd.awk /etc/shadow /etc/passwd`
 
@@ -39,6 +39,6 @@ file-format/
 MBP-2,local [f10] - hostname
 
 # Authorization (group membership)
-usage:
+Usage:
 
 `awk -F: -f groups.awk passwd `
