@@ -5,16 +5,17 @@ Usage:
 
 `awk -F: -v recertification="KK" -f p_passwd.awk /etc/shadow /etc/passwd`
 
+
 This will generate an extraction of the Linux users like this one:
 
-2024-06-16,colord,111,120,/usr/sbin/nologin,1697846400000,/var/lib/colord,!,0,MBP-2.local
+`2024-06-16,colord,111,120,/usr/sbin/nologin,1697846400000,/var/lib/colord,!,0,MBP-2.local
 
 2024-06-16,gnome-initial-setup,112,65534,/bin/false,1697846400000,/run/gnome-initial-setup/,!,0,MBP-2.local
 
 2024-06-16,Debian-gdm,113,121,/bin/false,1697846400000,/var/lib/gdm3,!,0,MBP-2.local
 
 2024-06-16,debian,1000,1000,/usr/bin/zsh,1697846400000,/var/,$y$j,1,MBP-2.local
-
+`
 
 Meaning:
 
@@ -46,11 +47,19 @@ Usage:
 this will output the relation between users and groups in an output like this one:
 `
 root:root-group,
+
 www-data:www-data-group,
+
 polkitd:
+
 rtkit:
+
 colord:
+
 gnome-initial-setup:
+
 Debian-gdm:
+
 debian:www-data-group,os_test1,os_test2,
+
 `
