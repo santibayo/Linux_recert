@@ -43,3 +43,14 @@ MBP-2,local [f10] - hostname
 Usage:
 
 `awk -F: -f groups.awk /etc/passwd `
+this will output the relation between users and groups in an output like this one:
+`
+root:root-group,
+www-data:www-data-group,
+polkitd:
+rtkit:
+colord:
+gnome-initial-setup:
+Debian-gdm:
+debian:www-data-group,os_test1,os_test2,
+`
