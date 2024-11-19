@@ -1,5 +1,9 @@
+# Installation
+Copy all awk scripts to the target machine.
+
 # Requirements
 - Administration account capable of reading /etc/shadow, /etc/passwd and /etc/group or sudo capabilities.
+
 # Accounts 
 Usage:
 
