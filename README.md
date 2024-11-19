@@ -11,7 +11,6 @@ Usage:
 
 `awk -F: -v recertification="Q4-2024" -f p_passwd.awk /etc/shadow /etc/passwd`
 
-
 This will generate an extraction of the Linux users like this one:
 
 Q4-2024,colord,111,120,/usr/sbin/nologin,1697846400000,/var/lib/colord,!,0,MBP-2.local
@@ -50,6 +49,7 @@ MBP-2,local [f10] - hostname
 Usage:
 
 `awk -F: -v recertification="Q4-2024" -f groups.awk passwd `
+
 this will output the relation between users and groups in an output like this one:
 
 Q4-2024,MBP-2.local,root,root-group
@@ -69,6 +69,7 @@ Q4-2024,MBP-2.local,Debian-gdm,_
 Q4-2024,MBP-2.local,debian,www-data-group|os_test1|os_test2
 
 Meaning:
+
 Q4-2024 [f1] - recertification step
 
 MBP-2.local[f2] - system hostname
