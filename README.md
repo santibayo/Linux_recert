@@ -1,6 +1,7 @@
 
 # Accounts 
-usage: 
+usage:
+
 `awk -F: -v recertification="KK" -f p_passwd.awk /etc/shadow /etc/passwd`
 
 This will generate an extraction of the Linux users like this one:
@@ -39,4 +40,5 @@ MBP-2,local [f10] - hostname
 
 # Authorization (group membership)
 usage:
+
 `awk -F: -f groups.awk passwd `
