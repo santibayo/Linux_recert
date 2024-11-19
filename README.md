@@ -48,7 +48,7 @@ MBP-2,local [f10] - hostname
 # Authorization (group membership)
 Usage:
 
-`awk -F: -v recertification="Q4-2024" -f groups.awk passwd `
+`awk -F: -v recertification="Q4-2024" -f groups.awk /etc/passwd `
 
 this will output the relation between users and groups in an output like this one:
 
