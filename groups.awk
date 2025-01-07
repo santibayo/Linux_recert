@@ -19,8 +19,10 @@ BEGIN {
 }
 {
     username=$1
-    command = "cat /etc/group|grep -E \"\:" username "|\," username "\"|awk -F: -v user=" username " -f sub_group_parser.awk"
-    #print " DEBUG: username:'" username "' cmd: " command
+    groups_file = group ? group : "/etc/group"
+    print ">> DEBUG: file group = " groups_file
+    command = "cat " groups_file "|grep -E \"\:" username "(,|$)|," username "(,|$)\"|awk -F: -v user=" username " -f sub_group_parser.awk"
+    print ">> DEBUG: username:'" username "' cmd: " command
     command | getline result
     close(command)
     print recertification "," hostname "," result
