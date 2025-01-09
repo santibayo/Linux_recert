@@ -50,7 +50,7 @@ Usage:
 
 `awk -F: -v recertification="Q4-2024" -f groups.awk /etc/passwd `
 hidden debug (do not use)
-`awk -F: -v recertification="Q4-2024" -v group="group" -f groups.awk /etc/passwd `
+awk -F: -v recertification="Q4-2024" -v group="group" -v debug="true" -f groups.awk passwd
 
 
 this will output the relation between users and groups in an output like this one:
