@@ -6,6 +6,12 @@ function get_recert_event(){
     return recert_step
 }
 
+function debugL(message){
+    if (debug == "true"){
+        print(message)
+    }
+}
+
 function get_hostname(){
     command = "hostname"
     command | getline result
@@ -16,13 +22,14 @@ function get_hostname(){
 BEGIN {
     recertification_= get_recert_event()
     hostname = get_hostname()
+    print "recert,  hostname , username, groups"
 }
 {
     username=$1
     groups_file = group ? group : "/etc/group"
-    print ">> DEBUG: file group = " groups_file
+    debugL(">> DEBUG: file group = " groups_file)
     command = "cat " groups_file "|grep -E \"\:" username "(,|$)|," username "(,|$)\"|awk -F: -v user=" username " -f sub_group_parser.awk"
-    print ">> DEBUG: username:'" username "' cmd: " command
+    debugL(">> DEBUG: username:'" username "' cmd: " command)
     command | getline result
     close(command)
     print recertification "," hostname "," result
