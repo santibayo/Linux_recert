@@ -24,6 +24,7 @@ function get_hostname(){
 BEGIN {
     recertification_= get_recert_event()
     hostname = get_hostname()
+    print "recert , username,  uid,  gid  , shell , last_changed  , home ,  shadow , ssh_login_key , hostname"
 }
 ## esto es para el archivo /etc/shadow
 ## almacenamos en un array asociativo tanto la fecha del ultimo cambio como el esquema de password
